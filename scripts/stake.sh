@@ -6,5 +6,5 @@ POOL=$1
 
 for keypair in keys/*.json
 do
-  echo $raydium_cli ido $POOL stake MAX -k $keypair 
+  $raydium_cli ido $POOL stake MAX -k $keypair 
 done
