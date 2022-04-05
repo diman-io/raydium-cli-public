@@ -13,4 +13,6 @@ Restore your 100500 wallets from Phantom:
 ```
 ./keygen.sh
 ```
-The result will save as `keys/[prefix]_[index]-[address].json`
+The results will be saved as `keys/[prefix]_[index]-[address].json`
+
+You need to use `solana` v9. This doesn't work with 10th version.
