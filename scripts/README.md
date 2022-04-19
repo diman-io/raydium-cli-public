@@ -75,6 +75,16 @@ Just a helper for USDC rebalancing.
 
 `VAULT` - path to vault keypair
 
+## rebalance-usdc-for-ido.sh
+
+```
+./rebalance-usdc-for-ido.sh <POOL> <VAULT>
+```
+
+`POOL` - pool name, for possible values use `../raydium ido --help`
+
+`VAULT` - path to vault keypair
+
 ## balance-*.sh
 
 They are like rebalance-* but only to show your accounts balances. `AIM` and `VAULT` aren't needed.
