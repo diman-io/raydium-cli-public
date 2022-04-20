@@ -20,7 +20,7 @@ do
   if [[ $balance == "" ]]; then
     balance=0
   fi
-  eligible_tickets=$($raydium_cli -u $URL ido $POOL user-info --output json-compact | jq '.eligibleTickets')
+  eligible_tickets=$($raydium_cli -u $URL ido $POOL user-info $address --output json-compact | jq '.eligibleTickets')
   aim=$(echo "$eligible_tickets * $usdc_per_ticket" | bc)
   if (( $(echo "$balance < $aim" | bc -l) )); then
     amount=$(echo "$aim - $balance" | bc -l)
