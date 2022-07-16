@@ -38,6 +38,8 @@ SNY, SLRS, LIKE, POLIS, ATLAS, GRAPE, GENE, DFL, TTT, RUN, REAL, FCON, YAW, ZBC,
 ./raydium-ido-stake.sh <POOL> - stake USDC for max eligible tickets
 
 ./raydium-rebalance-usdc-for-ido.sh <POOL> <VAULT> - rebalance USDC exactly for eligible tickets
+
+./raydium-farm-ray-harvest.sh - harvest RAY
 ```
 
 ### General scripts
