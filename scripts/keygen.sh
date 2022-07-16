@@ -1,4 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+solana_version=$(solana --version | cut -f 2 -d' ')
+minor_version=$(echo $solana_version | cut -f 2 -d'.')
+if [[ $minor_version != "9" ]]; then
+  echo "Please use Solana cli with version 1.9.*. Your version is $solana_version"
+  exit 1
+fi
 
 echo -n "Mnemonic: "
 read -s mnemonic

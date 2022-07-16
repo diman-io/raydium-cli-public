@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+here="$(dirname "$0")"
+
+source ${here}/libs/std.sh
+source ${here}/libs/tokens.sh
+
+for keypair in ${KEYS}/*.json
+do
+  address=$(solana address -k $keypair)
+  accounts=$(spl-token -u $URL accounts --owner $keypair --output json-compact 2>/dev/null)
+  zero_accounts=$(jq -c ' .accounts[] | select(.tokenAmount.amount=="0" and .mint!="'$RAY'" and .mint!="'$USDC'") | .address' <<< $accounts | sed s/\"//g)
+  if [[ $zero_accounts == "" ]]; then
+    echo "$address: Nothing to do"
+  else
+    for account_address in ${zero_accounts[@]}
+    do
+      echo "$address: Closing $account_address ..."
+      spl-token -u $URL close --address $account_address --owner $keypair --fee-payer $keypair
+    done
+  fi
+done

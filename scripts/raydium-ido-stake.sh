@@ -4,7 +4,9 @@ here="$(dirname "$0")"
 
 source ${here}/libs/std.sh
 
+POOL=$1
+
 for keypair in ${KEYS}/*.json
 do
-  $raydium_cli donate 0.01 -k $keypair 
+  $raydium_cli ido $POOL stake MAX -k $keypair -u $URL
 done
