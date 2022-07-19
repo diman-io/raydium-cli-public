@@ -44,7 +44,7 @@ SNY, SLRS, LIKE, POLIS, ATLAS, GRAPE, GENE, DFL, TTT, RUN, REAL, FCON, YAW, ZBC,
 
 ### General scripts
 
-`<TOKEN>` is any `<POOL>` value or `SOL` (for `./balance.sh` "`SOL`" is default)
+`<TOKEN>` is any `<POOL>` value or `SOL`, `RAY` or `USDC` or token address (for `./balance.sh` `SOL` is default)
 
 `<AIM>` is a number - the target value of the tokens
 
