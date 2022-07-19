@@ -52,6 +52,8 @@ SNY, SLRS, LIKE, POLIS, ATLAS, GRAPE, GENE, DFL, TTT, RUN, REAL, FCON, YAW, ZBC,
 ./balance.sh <TOKEN>
 
 ./rebalance.sh <TOKEN> <AIM> <VAULT>
+
+./spl-close-zero-accounts.sh <VAULT> - close all zero accounts except USDC and RAY
 ```
 
 ### Other scripts
